@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import { AuthProvider, useAuth } from "./context/AuthContext";
+import Header from "./components/Header";
 import Home from "./pages/Home";
 import PostDetails from "./pages/PostDetails";
 import Dashboard from "./pages/Dashboard";
@@ -15,6 +16,7 @@ function App() {
   return (
     <AuthProvider>
       <Router>
+        <Header />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/post/:id" element={<PostDetails />} />
